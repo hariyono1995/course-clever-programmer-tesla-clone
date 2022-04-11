@@ -18,37 +18,45 @@ export const ItemText = styled.div`
   text-align: center;
   text-transform: capitalize;
   h1 {
-    font-size: 12rem;
+    font-size: 2.2rem;
   }
 
   p {
-    padding-top: 1rem;
-    font-size: 4rem;
+    padding-top: 10px;
+    font-size: 1rem;
   }
 
-  /* @media (max-width: 500px) {
+  @media screen and (max-width: 768px) {
+    padding: 18vh;
     h1 {
-      font-size: 4rem;
+      font-size: 1.5rem;
     }
-  } */
+    p {
+      padding-top: 10px;
+      font-size: 0.7rem;
+    }
+  }
 `;
 
 export const ButtonGroup = styled.div`
   display: flex;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  justify-content: center;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+
+    /* padding-top: 20px; */
   }
 `;
 
 export const LeftButton = styled.div`
   background-color: rgba(23, 26, 32, 0.8);
   opacity: 0.75;
-  font-size: 3rem;
+  font-size: 12px;
   color: white;
-  height: 150px;
-  width: 720px;
+  height: 40px;
+  width: 220px;
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 100px;
@@ -56,18 +64,23 @@ export const LeftButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 8rem;
+  margin-left: 20px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 20px;
+    width: 180px;
+  }
 `;
 
 export const RightButton = styled(LeftButton)`
   background-color: rgba(238, 229, 233, 0.8);
   color: black;
-  margin-right: 8rem;
+  margin-right: 10px;
 `;
 
 export const DownArrow = styled.img`
   margin-top: 20px;
-  width: 120px;
+  width: 20px;
   animation: animationDown infinite 1.5s;
 
   @keyframes animationDown {
