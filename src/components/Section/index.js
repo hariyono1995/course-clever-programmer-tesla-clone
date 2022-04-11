@@ -1,5 +1,8 @@
 import React from "react";
 
+//  Add animation
+import Fade from "react-reveal/Fade";
+
 import {
   Wrap,
   ItemText,
@@ -19,16 +22,20 @@ export const Section = ({
 }) => {
   return (
     <Wrap bgImage={backgroundImage}>
-      <ItemText>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </ItemText>
+      <Fade bottom>
+        <ItemText>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </ItemText>
+      </Fade>
 
       <Buttons>
-        <ButtonGroup>
-          <LeftButton>{textLeftButton}</LeftButton>
-          {textRightButton && <RightButton>{textRightButton}</RightButton>}
-        </ButtonGroup>
+        <Fade bottom>
+          <ButtonGroup>
+            <LeftButton>{textLeftButton}</LeftButton>
+            {textRightButton && <RightButton>{textRightButton}</RightButton>}
+          </ButtonGroup>
+        </Fade>
         <DownArrow src="./images/down-arrow.svg" />
       </Buttons>
     </Wrap>

@@ -1,6 +1,28 @@
 import React from "react";
 
-import { Container, Menu, RightMenu, CustomMenu } from "./Header.styles";
+import {
+  Container,
+  Menu,
+  RightMenu,
+  CustomMenu,
+  BurgerNav,
+} from "./Header.styles";
+
+const burgerList = [
+  "model s",
+  "model 3",
+  "model x",
+  "model y",
+  "exiting inventory",
+  "used inventory",
+  "trade-in",
+  "cyber-truck",
+  "road-start",
+  "semi",
+  "test drive",
+  "contact us",
+  "utilities",
+];
 
 export default function Header() {
   return (
@@ -26,6 +48,16 @@ export default function Header() {
         <a href="#">shop</a>
         <a href="#">tesla account</a>
         <CustomMenu />
+
+        <BurgerNav>
+          {burgerList.map((menu, index) => (
+            <li>
+              <a href="#" key={index}>
+                {menu}
+              </a>
+            </li>
+          ))}
+        </BurgerNav>
       </RightMenu>
     </Container>
   );

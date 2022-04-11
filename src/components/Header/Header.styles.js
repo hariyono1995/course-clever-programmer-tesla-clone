@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import MenuIcon from "@mui/icons-material/Menu";
+import { AiOutlineMenuFold } from "@react-icons/all-files/ai/AiOutlineMenuFold";
 
 export const Container = styled.div`
   position: fixed;
@@ -13,6 +13,12 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
+
+  @media screen and (max-width: 500px) {
+    img {
+      width: 80px;
+    }
+  }
 `;
 
 export const Menu = styled.div`
@@ -33,6 +39,12 @@ export const Menu = styled.div`
     padding: 0 20px;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 768px) {
+    p {
+      display: none;
+    }
+  }
 `;
 
 export const RightMenu = styled.div`
@@ -44,8 +56,22 @@ export const RightMenu = styled.div`
     margin-right: 10px;
     font-size: 14px;
   }
+  @media screen and (max-width: 500px) {
+    a {
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
 `;
 
-export const CustomMenu = styled(MenuIcon)`
+export const CustomMenu = styled(AiOutlineMenuFold)`
   cursor: pointer;
+  font-size: 22px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 18px;
+  }
 `;
+
+export const BurgerNav = styled.ul``;
