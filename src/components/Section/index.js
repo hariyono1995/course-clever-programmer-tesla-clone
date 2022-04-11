@@ -10,18 +10,24 @@ import {
   Buttons,
 } from "./Section.styles";
 
-export const Section = () => {
+export const Section = ({
+  title,
+  description,
+  textLeftButton,
+  textRightButton,
+  backgroundImage,
+}) => {
   return (
-    <Wrap>
+    <Wrap bgImage={backgroundImage}>
       <ItemText>
-        <h1>Model S</h1>
-        <p>Order Online for Touchless Delivery</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
       </ItemText>
 
       <Buttons>
         <ButtonGroup>
-          <LeftButton>Custom Order</LeftButton>
-          <RightButton>Exiting Inventory</RightButton>
+          <LeftButton>{textLeftButton}</LeftButton>
+          {textRightButton && <RightButton>{textRightButton}</RightButton>}
         </ButtonGroup>
         <DownArrow src="./images/down-arrow.svg" />
       </Buttons>

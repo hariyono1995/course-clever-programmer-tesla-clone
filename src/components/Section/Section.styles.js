@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrap = styled.div`
   width: 100vw;
   height: 100vh;
-  background-image: url("/images/model-3.jpg");
+  background-image: url(${(props) => `/images/${props.bgImage}`});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -16,6 +16,7 @@ export const Wrap = styled.div`
 export const ItemText = styled.div`
   padding: 15vh;
   text-align: center;
+  text-transform: capitalize;
   h1 {
     font-size: 12rem;
   }
@@ -25,7 +26,7 @@ export const ItemText = styled.div`
     font-size: 4rem;
   }
 
-  /* @media screen and (max-width: 500px) {
+  /* @media (max-width: 500px) {
     h1 {
       font-size: 4rem;
     }
@@ -35,6 +36,10 @@ export const ItemText = styled.div`
 export const ButtonGroup = styled.div`
   display: flex;
   margin-bottom: 3rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const LeftButton = styled.div`
@@ -82,8 +87,6 @@ export const DownArrow = styled.img`
       transform: translateY(3px);
     }
   }
-
-  overflow-x: hidden;
 `;
 
 export const Buttons = styled.div``;
