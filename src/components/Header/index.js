@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Container,
@@ -6,6 +6,8 @@ import {
   RightMenu,
   CustomMenu,
   BurgerNav,
+  WrapCustomCloseButton,
+  CustomCloseButton,
 } from "./Header.styles";
 
 const burgerList = [
@@ -25,6 +27,7 @@ const burgerList = [
 ];
 
 export default function Header() {
+  const [isOpen, setIsopen] = useState(false);
   return (
     <Container>
       <a>
@@ -47,9 +50,12 @@ export default function Header() {
       <RightMenu>
         <a href="#">shop</a>
         <a href="#">tesla account</a>
-        <CustomMenu />
+        <CustomMenu onClick={() => setIsopen(true)} />
 
-        <BurgerNav>
+        <BurgerNav show={isOpen}>
+          <WrapCustomCloseButton>
+            <CustomCloseButton onClick={() => setIsopen(false)} />
+          </WrapCustomCloseButton>
           {burgerList.map((menu, index) => (
             <li>
               <a href="#" key={index}>
